@@ -2,12 +2,14 @@
 
 const express = require('express')
 const app = express()
+const isodate = require("isodate");
+const time = require('time')
 let port = process.env.PORT || 8080
 
 //middleware - gets three args
 const requestTime = (req, res, next) => {
-  req.requestedTime = Date.now()
-  isoTime = req.requestedTime.toISOString()
+  req.requestedTime = new time.Date()
+  isoTime = req.requestedTime
   next()
 }
 
