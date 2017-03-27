@@ -2,6 +2,7 @@
 
 const express = require('express')
 const app = express()
+let port = process.env.PORT || 8080
 
 //middleware - gets three args
 const requestTime = (req, res, next) => {
@@ -34,6 +35,6 @@ app.use((req, res) => {
 })
 
 
-app.listen(3000, () => {
-  console.log(`Server listening on port 3000`)
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`)
 })
